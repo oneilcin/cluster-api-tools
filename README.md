@@ -2,7 +2,7 @@
 
 ## genClusterApiServerYaml
 
-This tool will use the cluster-api server deploy template defined in 
+This tool will use the cluster-api server deploy [template](https://github.com/kubernetes-sigs/cluster-api/blob/master/clusterctl/clusterdeployer/clusterapiservertemplate.go) defined in 
 sigs.k8s.io/cluster-api/clusterctl/clusterdeployer, 
 create the needed certs for the cluster-api server,
 and output the completed template needed to deploy the cluster-api server.
