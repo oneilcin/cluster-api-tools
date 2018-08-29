@@ -2,24 +2,22 @@
 
 ## genClusterApiServerYaml
 
-This tool will use the cluster-api server deploy [template](https://github.com/kubernetes-sigs/cluster-api/blob/master/clusterctl/clusterdeployer/clusterapiservertemplate.go) defined in 
-sigs.k8s.io/cluster-api/clusterctl/clusterdeployer, 
-create the needed certs for the cluster-api server,
-and output the completed template needed to deploy the cluster-api server.
+This tool will use the cluster-api/pkg/deployer code to generate the cluster-api apiserver deployment manifest. 
 
-## Build
+## Run the tool to generate the clusterapi-apiserver.yaml 
     cd $GOPATH/src/sigs.k8s.io
     git clone https://github.com/oneilcin/cluster-api-tools
     cd cluster-api-tools
-    dep ensure -v
-    go run genClusterApiServerYaml.go > apiserverdeploy.yaml  (use any output file name)
+    go run genClusterApiServerYaml.go > clusterapi-apiserver.yaml  (use any output file name)
 
 ## Usage
 
 First deploy the cluster-api server, and then deploy the chosen provider components.
 
     minikube start --bootstrapper=kubeadm
-    kubectl create -f apiserverdeploy.yaml
-    kubectl create -f your-provider-components.yaml   (this includes the provider machine and cluster controllers)
+    kubectl create -f clusterapi-apiserver.yaml
+    kubectl create -f provider-components.yaml   (this includes the provider machine and cluster controllers)
+
+Instructions to generate the provider-components.yaml are [here](https://github.com/samsung-cnct/cluster-api-provider-ssh/blob/master/clusterctl/examples/ssh/README.md)
 
 Note: See this example for a [provider-components-template](https://github.com/samsung-cnct/cluster-api-provider-ssh/blob/master/clusterctl/examples/ssh/provider-components.yaml.template)
