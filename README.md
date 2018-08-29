@@ -7,12 +7,11 @@ sigs.k8s.io/cluster-api/clusterctl/clusterdeployer,
 create the needed certs for the cluster-api server,
 and output the completed template needed to deploy the cluster-api server.
 
-## Build
+## Run the tool to generate the clusterapi-apiserver.yaml 
     cd $GOPATH/src/sigs.k8s.io
     git clone https://github.com/oneilcin/cluster-api-tools
     cd cluster-api-tools
-    dep ensure -v
-    go run genClusterApiServerYaml.go > apiserverdeploy.yaml  (use any output file name)
+    go run genClusterApiServerYaml.go > clusterapi-apiserver.yaml  (use any output file name)
 
 ## Usage
 
