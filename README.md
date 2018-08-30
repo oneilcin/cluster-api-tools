@@ -5,6 +5,7 @@
 This tool will use the cluster-api/pkg/deployer code to generate the cluster-api apiserver deployment manifest.
 
 ## Run the tool to generate the clusterapi-apiserver.yaml
+
     cd $GOPATH/src/sigs.k8s.io
     git clone https://github.com/oneilcin/cluster-api-tools
     cd cluster-api-tools
