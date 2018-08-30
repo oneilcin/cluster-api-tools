@@ -8,7 +8,7 @@ This tool will use the cluster-api/pkg/deployer code to generate the cluster-api
     cd $GOPATH/src/sigs.k8s.io
     git clone https://github.com/oneilcin/cluster-api-tools
     cd cluster-api-tools
-    go run genClusterApiServerYaml.go > clusterapi-apiserver.yaml  (use any output file name)
+    go run genClusterApiServerYaml.go > clusterapi-apiserver.yaml
 
 ## Usage
 
