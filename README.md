@@ -23,4 +23,6 @@ First deploy the cluster-api server, and then deploy the chosen provider compone
 
 Instructions to generate the provider-components.yaml are [here](https://github.com/samsung-cnct/cluster-api-provider-ssh/blob/master/clusterctl/examples/ssh/README.md)
 
+It is recommended to create each cluster in a new namespace.  Sample manifests for [create cluster](https://github.com/samsung-cnct/cluster-api-provider-ssh/tree/master/assets)
+
 Note: See this example for a [provider-components-template](https://github.com/samsung-cnct/cluster-api-provider-ssh/blob/master/clusterctl/examples/ssh/provider-components.yaml.template)
