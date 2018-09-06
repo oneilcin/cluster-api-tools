@@ -19,7 +19,7 @@ First deploy the cluster-api server, and then deploy the chosen provider compone
     kubectl create -f clusterapi-apiserver.yaml -f provider-components.yaml
     # wait for the apiserver pod to be ready
     kubectl get pods -w
-    kubectl create -f cluster.yaml -f machines.yaml --validate=false
+    kubectl create -f cluster.yaml -f machine.yaml --validate=false
 
 Instructions to generate the provider-components.yaml are [here](https://github.com/samsung-cnct/cluster-api-provider-ssh/blob/master/clusterctl/examples/ssh/README.md)
 
