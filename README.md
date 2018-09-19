@@ -6,12 +6,15 @@ This tool will use the cluster-api/pkg/deployer code to generate the cluster-api
 
 ## Run the tool to generate the clusterapi-apiserver.yaml
 
-    cd $GOPATH/src/sigs.k8s.io
+    mkdir -p $GOPATH/src/github.com/oneilcin
+    cd $GOPATH/src/github.com/oneilcin
     git clone https://github.com/oneilcin/cluster-api-tools
     cd cluster-api-tools
     go run genClusterApiServerYaml.go > clusterapi-apiserver.yaml
 
 ## Usage
+
+### Deploy into a Manager Cluster
 
 First deploy the cluster-api server, and then deploy the chosen provider components.
 
@@ -19,10 +22,9 @@ First deploy the cluster-api server, and then deploy the chosen provider compone
     kubectl create -f clusterapi-apiserver.yaml -f provider-components.yaml
     # wait for the apiserver pod to be ready
     kubectl get pods -w
-    kubectl create -f cluster.yaml -f machines.yaml --validate=false
 
-Instructions to generate the provider-components.yaml are [here](https://github.com/samsung-cnct/cluster-api-provider-ssh/blob/master/clusterctl/examples/ssh/README.md)
+Instructions to generate the provider-components.yaml for the [cluster-api-provider-ssh](https://github.com/samsung-cnct/cluster-api-provider-ssh/blob/master/clusterctl/examples/ssh/README.md)
+
+### Create new Managed Clusters using the cluster-api-provider-ssh API (direct, or kubectl)
 
 It is recommended to create each cluster in a new namespace.  Sample manifests for [create cluster](https://github.com/samsung-cnct/cluster-api-provider-ssh/tree/master/assets)
-
-Note: See this example for a [provider-components-template](https://github.com/samsung-cnct/cluster-api-provider-ssh/blob/master/clusterctl/examples/ssh/provider-components.yaml.template)
