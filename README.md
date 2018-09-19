@@ -28,3 +28,11 @@ Instructions to generate the provider-components.yaml for the [cluster-api-provi
 ### Create new Managed Clusters using the cluster-api-provider-ssh API (direct, or kubectl)
 
 It is recommended to create each cluster in a new namespace.  Sample manifests for [create cluster](https://github.com/samsung-cnct/cluster-api-provider-ssh/tree/master/assets)
+
+    # create a namespace for each new cluster you are creating
+    kubectl create namespace test1
+ 
+    # make sure the manifests below are in the same namespace
+    kubectl create -f cluster-private-key.yaml
+    kubectl create -f cluster.yaml --validate=false
+    kubectl create -f machines-formatted.yaml --validate=false
