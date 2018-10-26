@@ -17,7 +17,9 @@ This tool will use the cluster-api/pkg/deployer code to generate the cluster-api
 ### Deploy into a Manager Cluster
 The manager cluster can be any kubeadm created kubernetes cluster.
 
-Using minikube as your Manager Cluster
+#### Using minikube as your Manager Cluster
+
+Note: There is a [known issue](https://github.com/kubernetes/minikube/issues/3076) with minikube versions later than 0.28.0 not working with the cluster-api apiserver.  Be sure and use minikube version 0.28.0.
 
      minikube start --bootstrapper=kubeadm
 
